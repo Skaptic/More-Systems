@@ -1,0 +1,29 @@
+//Space
+
+//Stars
+solarsystem.PolluxSystem=Pollux System
+star.Pollux=Pollux
+
+//Planets
+planet.planetApollo=Apollo
+planet.planetVenera=Venera
+planet.planetAquarius=Aquarius
+planet.planetArctos=Arctos
+
+//Moons
+moon.moonPales=Pales
+moon.moonJuno=Juno
+
+//Blocks
+tile.venera_stone.name=§eVenera Stone
+tile.venera_cobblestone.name=§eVenera Cobblestone
+tile.venera_dirt.name=§eVenera Dirt
+tile.venera_sandstone.name=§eVenera Sandstone
+tile.venera_stonebrick.name=§eVenera Stonebrick
+tile.venera_stonebrick_cracked.name=§eVenera Cracked Stonebrick
+tile.venera_stonebrick_stairs.name=§eVenera Stonebrick Stairs
+tile.venera_stonebrick_slab_half.name=§eVenera Stonebrick Halfslab
+tile.venera_stonebrick_slab_double.name=§eVenera Stonebrick Doubleslab
+
+//Tabs
+itemGroup.moresystemstab=More Systems

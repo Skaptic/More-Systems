@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "ms:blocks/venera_stonebrick",
+        "top": "ms:blocks/venera_stonebrick",
+        "side": "ms:blocks/venera_stonebrick"
+    }
+}

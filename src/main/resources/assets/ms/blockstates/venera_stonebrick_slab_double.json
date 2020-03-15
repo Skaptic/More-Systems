@@ -1,0 +1,6 @@
+{
+    "variants":
+    {
+        "variant=default": { "model": "ms:venera_stonebrick_slab_double" }
+    }
+}

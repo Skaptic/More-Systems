@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "DD",
+        "DD"
+    ],
+    "key":
+    {
+        "D":
+        {
+            "item": "ms:venera_dirt"
+        }
+    },
+    "result":
+    {
+        "item": "ms:venera_sandstone",
+        "count": 1
+    }
+}
