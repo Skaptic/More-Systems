@@ -31,11 +31,11 @@ public class CelestialBodies
 	{
 		//Pollux
 		Vector3 pos = new Vector3();
-		pos.x = 1.0D;
+		pos.x = 0.8D;
 		pos.y = 0.8D;
 		systemPollux.setMapPosition(pos);
 		starPollux.setParentSolarSystem(systemPollux);
-		starPollux.setRelativeSize(25.0F);
+		starPollux.setRelativeSize(30.0F);
 		systemPollux.setMainStar(starPollux);
 
 	}
@@ -44,7 +44,7 @@ public class CelestialBodies
 	{
 		//Apollo - WIP -----------------------------------
 		
-		planetApollo.setDimensionInfo(1745, WorldProviderApollo.class);
+		planetApollo.setDimensionInfo(-777, WorldProviderApollo.class);
 		planetApollo.setParentSolarSystem(systemPollux);
 		planetApollo.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetApollo.setPhaseShift(5.0F);
@@ -128,7 +128,7 @@ public class CelestialBodies
 		moonJuno.setRelativeOrbitTime(40.0F);
 		moonJuno.setMoonIcon("juno");
 		moonJuno.setTierRequired(4);
-		moonJuno.setRelativeSize(4.5F);
+		moonJuno.setRelativeSize(15F);
 		moonJuno.setDistanceFromCenter(30.0F);
 	    moonJuno.setPlanetRadiation(0.5F);
 		moonJuno.setWindLevel(6.7F);

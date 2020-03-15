@@ -26,6 +26,8 @@ public class ModBlocks
 	public static final Block VENERA_DIRT = new VeneraDirt("venera_dirt", Material.SAND);
 	public static final Block VENERA_SANDSTONE = new VeneraSandstone("venera_sandstone", Material.ROCK);
 	public static final Block VENERA_STONE = new VeneraStone("venera_stone", Material.ROCK);
+  //public static final Block VENERA_COAL_ORE = new VeneraCoalOre("venera_coal_ore", Material.ROCK);
+  //public static final Block Venera_IRON_ORE = new VeneraIronOre("venera_iron_ore", Material.ROCK);
 	public static final Block VENERA_COBBLESTONE = new VeneraCobblestone("venera_cobblestone", Material.ROCK);
 	public static final Block VENERA_STONEBRICK = new VeneraStone("venera_stonebrick", Material.ROCK);
 	public static final Block VENERA_STONEBRICK_CRACKED = new VeneraStone("venera_stonebrick_cracked", Material.ROCK);

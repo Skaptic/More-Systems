@@ -13,8 +13,8 @@ import net.minecraftforge.common.BiomeDictionary;
 
 public class MSBiomes 
 {
-	public static final Biome APOLLO = new BiomeApollo(new BiomeProperties("Apollo"));
 	public static final List<BiomeGenBaseGC> biomeList = new LinkedList<>();
+	public static final Biome APOLLO = new BiomeApollo(new BiomeProperties("Apollo"));
 	private static int totalBiomes = 0;
 	
 	public static void init() 

@@ -7,7 +7,7 @@ import com.eternalwolf.moresystems.init.ModBlocks;
 public class BiomeApollo extends BiomeApolloBase {
 	
 	public BiomeApollo(BiomeProperties props) {
-		super("apollo", props);
+		super("Apollo", props);
 		props.setRainDisabled();
 		this.setBiomeHeight(45);
 		this.setBiomeType(EnumBiomeTypeMS.ICY);

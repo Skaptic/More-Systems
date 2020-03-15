@@ -34,9 +34,9 @@ import net.minecraft.world.chunk.ChunkPrimer;
 
 public class ChunkProviderApollo extends ChunkProviderBase
 {
-    public static final IBlockState BLOCK_TOP = ModBlocks.VENERA_DIRT.getDefaultState().withProperty(null, null);
-    public static final IBlockState BLOCK_FILL = ModBlocks.VENERA_SANDSTONE.getDefaultState().withProperty(null, null);
-    public static final IBlockState BLOCK_LOWER = ModBlocks.VENERA_STONE.getDefaultState().withProperty(null, null);
+    public static final IBlockState BLOCK_TOP = ModBlocks.VENERA_DIRT.getDefaultState();//.withProperty(null, null);
+    public static final IBlockState BLOCK_FILL = ModBlocks.VENERA_SANDSTONE.getDefaultState();//.withProperty(null, null);
+    public static final IBlockState BLOCK_LOWER = ModBlocks.VENERA_STONE.getDefaultState();//.withProperty(null, null);
 
     private final Random rand;
 

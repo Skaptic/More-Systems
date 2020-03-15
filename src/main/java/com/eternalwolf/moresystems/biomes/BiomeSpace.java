@@ -5,6 +5,7 @@ import java.util.Random;
 import com.eternalwolf.moresystems.star.MSPlanet;
 import com.eternalwolf.moresystems.world.WorldProviderBase;
 
+import micdoodle8.mods.galacticraft.api.world.BiomeGenBaseGC;
 import net.minecraft.block.Block;
 import net.minecraft.world.biome.Biome.BiomeProperties;
 

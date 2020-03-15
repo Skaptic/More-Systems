@@ -11,7 +11,7 @@ public class MSDimensions
 	public static void init()
 	{
 		//Apollo
-		MSDimensions.APOLLO = MSDimensions.getDimType(1745);
+		MSDimensions.APOLLO = MSDimensions.getDimType(-777);
 		//Venera
 		MSDimensions.VENERA = MSDimensions.getDimType(1746);
 	}
