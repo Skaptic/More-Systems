@@ -5,11 +5,13 @@ import com.eternalwolf.moresystems.star.MSMoon;
 import com.eternalwolf.moresystems.star.MSPlanet;
 import com.eternalwolf.moresystems.star.MSStar;
 import com.eternalwolf.moresystems.star.MSStarSystem;
-import com.eternalwolf.moresystems.world.WorldProviderApollo;
+import com.eternalwolf.moresystems.world.apollo.WorldProviderApollo;
 
+import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.GalaxyRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.SolarSystem;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
+import micdoodle8.mods.galacticraft.core.dimension.TeleportTypeMoon;
 import net.minecraft.init.Biomes;
 
 public class CelestialBodies 
@@ -17,6 +19,11 @@ public class CelestialBodies
 	//Declaring Pollux solar system
 	public static MSStarSystem systemPollux = new MSStarSystem("PolluxSystem");
 	public static MSStar starPollux = new MSStar("Pollux");
+	
+	//Declaring TRAPPIST-1 solar system
+	public static MSStarSystem systemTRAPPIST_1 = new MSStarSystem("TRAPPIST_1System");
+	public static MSStar starTRAPPIST_1 = new MSStar("TRAPPIST_1");
+	
 	//Declaring Pollux planets
 	public static MSPlanet planetApollo = new MSPlanet("planetApollo");
 	public static MSPlanet planetVenera = new MSPlanet("planetVenera");
@@ -30,13 +37,23 @@ public class CelestialBodies
 	public static void initStarSystems() 
 	{
 		//Pollux
-		Vector3 pos = new Vector3();
-		pos.x = 0.8D;
-		pos.y = 0.8D;
-		systemPollux.setMapPosition(pos);
+		Vector3 pos0 = new Vector3();
+		pos0.x = 0.9D;
+		pos0.z = -1.0D;
+		systemPollux.setMapPosition(pos0);
 		starPollux.setParentSolarSystem(systemPollux);
-		starPollux.setRelativeSize(30.0F);
+		starPollux.setRelativeSize(28.0F);
 		systemPollux.setMainStar(starPollux);
+		
+		//TRAPPIST-1
+		Vector3 pos1 = new Vector3();
+		pos1.x = -1.5D;
+		pos1.z = 1.0D;
+		systemTRAPPIST_1.setMapPosition(pos1);
+		starTRAPPIST_1.setParentSolarSystem(systemTRAPPIST_1);
+		starTRAPPIST_1.setRelativeSize(12.0F);
+		systemTRAPPIST_1.setMainStar(starTRAPPIST_1);
+		
 
 	}
 	
@@ -51,9 +68,12 @@ public class CelestialBodies
 		planetApollo.setRelativeOrbitTime(0.14F);
 		planetApollo.setDistanceFromCenter(0.4F);
 		planetApollo.setTierRequired(4);
-		planetApollo.setRelativeSize(7.0F);
+		planetApollo.setRelativeSize(1.0F);
 		planetApollo.setHasRain(false);
 		planetApollo.setPlanetIcon("apollo");
+		planetApollo.setPlanetTemperature(0.0F);
+		planetApollo.setPlanetRadiation(1.0F);
+		planetApollo.setAtmosphere();
 		planetApollo.setBiomeInfo(MSBiomes.APOLLO);
 		
 		//Venera - WIP -----------------------------------
@@ -64,12 +84,15 @@ public class CelestialBodies
 		planetVenera.setPhaseShift(2.0F);
 		planetVenera.setRelativeOrbitTime(0.65F);
 		planetVenera.setDistanceFromCenter(0.8F);
-		planetVenera.setTierRequired(4);
-		planetVenera.setRelativeSize(11F);
+		planetVenera.setTierRequired(-1);
+		planetVenera.setRelativeSize(11.0F);
 		planetVenera.setPlanetRadiation(0.5F);
 		planetVenera.setWindLevel(6.7F);
 		planetVenera.setHasRain(false);
 		planetVenera.setPlanetIcon("venera");
+		/*planetVenera.setPlanetTemperature(NONE);
+		planetVenera.setPlanetRadiation(NONE);
+		planetVenera.setAtmosphere();*/
 		//planetVenera.setBiomeInfo(INSERT BIOME HERE);
 		
 		//Aquarius - WIP ------------------------------------
@@ -79,9 +102,9 @@ public class CelestialBodies
 		planetAquarius.setRingColorRGB(0.0F, 128F, 0.0F);
 		planetAquarius.setPhaseShift(5.0F);
 		planetAquarius.setRelativeOrbitTime(1.7F);
-		planetAquarius.setDistanceFromCenter(1.1F);
-		planetAquarius.setTierRequired(4);
-		planetAquarius.setRelativeSize(15F);
+		planetAquarius.setDistanceFromCenter(1.7F);
+		planetAquarius.setTierRequired(-1);
+		planetAquarius.setRelativeSize(15.0F);
 		planetAquarius.setPlanetRadiation(0.5F);
 		planetAquarius.setWindLevel(6.7F);
 		planetAquarius.setHasRain(true);
@@ -95,9 +118,9 @@ public class CelestialBodies
 		planetArctos.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetArctos.setPhaseShift(10.0F);
 		planetArctos.setRelativeOrbitTime(6.0F);
-		planetArctos.setDistanceFromCenter(1.7F);
-		planetArctos.setTierRequired(5);
-		planetArctos.setRelativeSize(8F);
+		planetArctos.setDistanceFromCenter(2.1F);
+		planetArctos.setTierRequired(-1);
+		planetArctos.setRelativeSize(8.0F);
 		planetArctos.setPlanetRadiation(0.5F);
 		planetArctos.setWindLevel(6.7F);
 		planetArctos.setHasRain(true);
@@ -114,7 +137,7 @@ public class CelestialBodies
 		moonPales.setPhaseShift(2.0F);
 		moonPales.setRelativeOrbitTime(25.0F);
 		moonPales.setMoonIcon("pales");
-		moonPales.setTierRequired(4);
+		moonPales.setTierRequired(-1);
 		moonPales.setRelativeSize(15.0F);
 		moonPales.setDistanceFromCenter(14.5F);
 	    moonPales.setPlanetRadiation(0.5F);
@@ -127,8 +150,8 @@ public class CelestialBodies
 		moonJuno.setPhaseShift(2.0F);
 		moonJuno.setRelativeOrbitTime(40.0F);
 		moonJuno.setMoonIcon("juno");
-		moonJuno.setTierRequired(4);
-		moonJuno.setRelativeSize(15F);
+		moonJuno.setTierRequired(-1);
+		moonJuno.setRelativeSize(15.0F);
 		moonJuno.setDistanceFromCenter(30.0F);
 	    moonJuno.setPlanetRadiation(0.5F);
 		moonJuno.setWindLevel(6.7F);
@@ -139,6 +162,7 @@ public class CelestialBodies
 	public static void registerSystems()
 	{
 		GalaxyRegistry.registerSolarSystem(systemPollux);
+		GalaxyRegistry.registerSolarSystem(systemTRAPPIST_1);
 		CelestialBodies.registerPlanets();
 	}
 	
@@ -158,7 +182,8 @@ public class CelestialBodies
 	
 	public static void registerTeleportTypes()
 	{
-		
+		//Pollux
+		GalacticraftRegistry.registerTeleportType(WorldProviderApollo.class, new TeleportTypeMoon());
 	}
 	
 	

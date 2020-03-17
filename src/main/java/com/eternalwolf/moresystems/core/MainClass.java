@@ -42,8 +42,8 @@ public class MainClass
 	@EventHandler
 	public static void init(FMLInitializationEvent event)
 	{
-		ModRecipes.init();
 		OreDictionaryCompat.registerOres();
+		ModRecipes.init();
 	}
 	
 	@EventHandler

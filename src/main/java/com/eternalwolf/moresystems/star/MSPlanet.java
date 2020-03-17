@@ -49,6 +49,7 @@ public class MSPlanet extends Planet
 	private boolean rains;
 	private float baseRadiation;
 	private float windLevel;
+	private float baseToxicity;
 
 	public boolean getHasRain() 
 	{
@@ -97,6 +98,38 @@ public class MSPlanet extends Planet
 	{
 		return this.baseTemp >= 60.0F;
 	}
+
+	public Planet setPlanetTemperature(float planetTemp) 
+	{
+		this.baseTemp = planetTemp;
+		return this;
+	}
+
+	public Planet setAtmosphere() 
+	{
+		this.atmosphere = new AtmosphereInfo(this.getIsBreathable(), this.getHasRain(), this.getIsCorrosive(),
+				this.getPlanetTemperature(), this.getWindLevel(), this.getAtmosphericDensity());
+		return this;
+	}
+
+	public boolean getIsCorrosive() 
+	{
+		return (this.getIsToxicPlanet() || this.getIsRadioactivePlanet());
+	}
 	
+	public boolean getIsToxicPlanet() 
+	{
+		return this.baseToxicity >= 15.0F;
+	}
+	
+	public boolean getIsRadioactivePlanet() 
+	{
+		return this.baseRadiation >= 10.0F;
+	}
+	
+    public float relativeDensity()
+    {
+        return this.density;
+    }
 	
 }

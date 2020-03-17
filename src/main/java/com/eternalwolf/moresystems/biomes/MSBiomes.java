@@ -7,6 +7,9 @@ import com.eternalwolf.moresystems.biomes.apollo.BiomeApollo;
 import com.eternalwolf.moresystems.util.helpers.MSRegisterHelper;
 
 import micdoodle8.mods.galacticraft.api.world.BiomeGenBaseGC;
+import micdoodle8.mods.galacticraft.core.world.gen.BiomeFlatMoon;
+import micdoodle8.mods.galacticraft.core.world.gen.BiomeMoon;
+import micdoodle8.mods.galacticraft.planets.mars.world.gen.BiomeGenFlatMars;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.BiomeProperties;
 import net.minecraftforge.common.BiomeDictionary;
@@ -19,7 +22,7 @@ public class MSBiomes
 	
 	public static void init() 
 	{
-		// Zollus
+		// Apollo
 		MSBiomes.addBiome(MSBiomes.APOLLO);
 	}
 		

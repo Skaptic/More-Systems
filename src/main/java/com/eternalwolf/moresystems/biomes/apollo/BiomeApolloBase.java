@@ -3,6 +3,7 @@ package com.eternalwolf.moresystems.biomes.apollo;
 import java.util.Random;
 
 import com.eternalwolf.moresystems.biomes.BiomeSpace;
+import com.eternalwolf.moresystems.biomes.decorators.apollo.BiomeDecoratorApollo;
 import com.eternalwolf.moresystems.celestialbodies.CelestialBodies;
 import com.eternalwolf.moresystems.enums.EnumBiomeTypeMS;
 import com.eternalwolf.moresystems.init.ModBlocks;
@@ -17,11 +18,11 @@ import net.minecraft.world.chunk.ChunkPrimer;
 
 public class BiomeApolloBase extends BiomeSpace {
 	
-	protected static final IBlockState STONE = ModBlocks.VENERA_STONE.getDefaultState();
+	protected static final IBlockState STONE = ModBlocks.APOLLO_STONE.getDefaultState();
 	protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
 	protected static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
     protected static final IBlockState GRAVEL = Blocks.GRAVEL.getDefaultState();
-	protected static final IBlockState DIRT = ModBlocks.VENERA_DIRT.getDefaultState();
+	protected static final IBlockState DIRT = ModBlocks.APOLLO_DUST.getDefaultState();
 	protected static final IBlockState ICE = Blocks.PACKED_ICE.getDefaultState();
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	
@@ -30,7 +31,7 @@ public class BiomeApolloBase extends BiomeSpace {
 	
 	public BiomeApolloBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
-		this.setTempCategory(TempCategory.COLD);
+		this.setTempCategory(TempCategory.WARM);
 		this.decorator.flowersPerChunk = -999;
 		this.decorator.treesPerChunk = -999;
 		this.decorator.grassPerChunk = -999;
@@ -39,7 +40,7 @@ public class BiomeApolloBase extends BiomeSpace {
 		this.setPlanetForBiome(CelestialBodies.planetApollo);
 	}
 	
-	public final void generateZollusTerrain(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {
+	public final void generateApolloTerrain(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {
 		int i = worldIn.getSeaLevel();
 		float biomeHeight = this.getBiomeHeight();
 		IBlockState topState = this.topBlock;
@@ -109,7 +110,7 @@ public class BiomeApolloBase extends BiomeSpace {
 
 	@Override
 	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {
-		this.generateZollusTerrain(worldIn, rand, chunkPrimerIn, x, z, noiseVal);
+		this.generateApolloTerrain(worldIn, rand, chunkPrimerIn, x, z, noiseVal);
 	}
 	
 	@Override
@@ -119,11 +120,11 @@ public class BiomeApolloBase extends BiomeSpace {
 	
 	@Override
 	public BiomeDecorator createBiomeDecorator() {
-		return new BiomeDecoratorVenus();
+		return new BiomeDecoratorApollo();
 	}
 	
-	protected BiomeDecoratorVenus getBiomeDecorator() {
-		return (BiomeDecoratorVenus) this.decorator;
+	protected BiomeDecoratorApollo getBiomeDecorator() {
+		return (BiomeDecoratorApollo) this.decorator;
 	}
 	
 	@Override
