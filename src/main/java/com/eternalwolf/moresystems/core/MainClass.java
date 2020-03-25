@@ -35,7 +35,6 @@ public class MainClass
 	@EventHandler
 	public static void PreInit(FMLPreInitializationEvent event)
 	{
-		CelestialBodies.init();
 		MSBiomes.init();
 	}
 	
@@ -44,6 +43,7 @@ public class MainClass
 	{
 		OreDictionaryCompat.registerOres();
 		ModRecipes.init();
+		CelestialBodies.init();
 	}
 	
 	@EventHandler

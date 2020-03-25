@@ -32,6 +32,7 @@ public class SkyProviderApollo extends IRenderHandler
 {
     private static final ResourceLocation veneraTexture = new ResourceLocation(Reference.MOD_ID + ":textures/gui/planets/venera.png");
     private static final ResourceLocation polluxTexture = new ResourceLocation(Reference.MOD_ID + ":textures/gui/stars/pollux.png");
+    private static final ResourceLocation aquariusTexture = new ResourceLocation(Reference.MOD_ID + ":textures/gui/planets/aquarius.png");
 
     public int starList;
     public int glSkyList;
@@ -129,6 +130,8 @@ public class SkyProviderApollo extends IRenderHandler
         RenderHelper.disableStandardItemLighting();
         float f7;
         float f8;
+        float f8a;
+        float f9a;
         float f9;
         float f10;
 
@@ -333,8 +336,10 @@ public class SkyProviderApollo extends IRenderHandler
         GL11.glDepthMask(true);
         GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
         GL11.glDisable(GL11.GL_BLEND);
+      
     }
-
+    
+    
     private void renderStars()
     {
         final Random rand = new Random(10842L);

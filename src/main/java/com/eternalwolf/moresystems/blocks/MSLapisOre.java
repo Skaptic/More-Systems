@@ -44,7 +44,7 @@ public class MSLapisOre extends BlockBase
 	
 	@Override
 	public int quantityDropped(Random random) {
-		int max = 5;
+		int max = 3;
 		int min = 4;
 		return random.nextInt(max) + min;
 	}

@@ -25,7 +25,8 @@ public enum EnumOreGenMS {
 	COBALT(5, 14, 0, 24),
 	PLATINUM(4, 4, 0, 24),
 	OBSIDIAN(20, 25, 0, 45),
-	ZINC(25, 6, 0, 26);
+	ZINC(25, 6, 0, 26),
+	ILMENITE(4, 5, 0, 13);
 	
 	private int genCount;
 	private int blockCount;

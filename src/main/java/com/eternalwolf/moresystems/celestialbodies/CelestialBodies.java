@@ -24,6 +24,10 @@ public class CelestialBodies
 	public static MSStarSystem systemTRAPPIST_1 = new MSStarSystem("TRAPPIST_1System");
 	public static MSStar starTRAPPIST_1 = new MSStar("TRAPPIST_1");
 	
+	//test
+	/*public static MSStarSystem systemTest = new MSStarSystem("Test_system");
+	public static MSStar starTest = new MSStar("testStar");*/
+	
 	//Declaring Pollux planets
 	public static MSPlanet planetApollo = new MSPlanet("planetApollo");
 	public static MSPlanet planetVenera = new MSPlanet("planetVenera");
@@ -37,22 +41,31 @@ public class CelestialBodies
 	public static void initStarSystems() 
 	{
 		//Pollux
-		Vector3 pos0 = new Vector3();
-		pos0.x = 0.9D;
-		pos0.z = -1.0D;
-		systemPollux.setMapPosition(pos0);
+		Vector3 pos = new Vector3();
+		pos.x = 1.0F;
+		pos.y = 0.5F;
+		systemPollux.setMapPosition(pos);
 		starPollux.setParentSolarSystem(systemPollux);
 		starPollux.setRelativeSize(28.0F);
 		systemPollux.setMainStar(starPollux);
 		
 		//TRAPPIST-1
 		Vector3 pos1 = new Vector3();
-		pos1.x = -1.5D;
-		pos1.z = 1.0D;
+		pos1.x = -1.5F;
+		pos1.y = 1.0F;
 		systemTRAPPIST_1.setMapPosition(pos1);
 		starTRAPPIST_1.setParentSolarSystem(systemTRAPPIST_1);
 		starTRAPPIST_1.setRelativeSize(12.0F);
 		systemTRAPPIST_1.setMainStar(starTRAPPIST_1);
+		
+		//test
+		/*Vector3 pos2 = new Vector3();
+		pos2.x = 1.0F;
+		pos2.y = 0.5F;
+		systemTest.setMapPosition(pos2);
+		starTest.setParentSolarSystem(systemTest);
+		starTest.setRelativeSize(12.0F);
+		systemTest.setMainStar(starTest);*/
 		
 
 	}
@@ -64,7 +77,7 @@ public class CelestialBodies
 		planetApollo.setDimensionInfo(-777, WorldProviderApollo.class);
 		planetApollo.setParentSolarSystem(systemPollux);
 		planetApollo.setRingColorRGB(0.1F, 0.9F, 2.6F);
-		planetApollo.setPhaseShift(5.0F);
+		planetApollo.setPhaseShift(4.0F);
 		planetApollo.setRelativeOrbitTime(0.14F);
 		planetApollo.setDistanceFromCenter(0.4F);
 		planetApollo.setTierRequired(4);
@@ -80,7 +93,7 @@ public class CelestialBodies
 		
 		//planetVenera.setDimensionInfo(INSERT DIMENSION STUFF HERE));
 		planetVenera.setParentSolarSystem(systemPollux);
-		planetVenera.setRingColorRGB(255F, 255F, 2.6F);
+		planetVenera.setRingColorRGB(0.0F, 0.0F, 2.6F);
 		planetVenera.setPhaseShift(2.0F);
 		planetVenera.setRelativeOrbitTime(0.65F);
 		planetVenera.setDistanceFromCenter(0.8F);
@@ -99,7 +112,7 @@ public class CelestialBodies
 		
 		//planetVenera.setDimensionInfo(INSERT DIMENSION STUFF HERE));
 		planetAquarius.setParentSolarSystem(systemPollux);
-		planetAquarius.setRingColorRGB(0.0F, 128F, 0.0F);
+		planetAquarius.setRingColorRGB(0.0F, 0.0F, 0.0F);
 		planetAquarius.setPhaseShift(5.0F);
 		planetAquarius.setRelativeOrbitTime(1.7F);
 		planetAquarius.setDistanceFromCenter(1.7F);
@@ -118,7 +131,7 @@ public class CelestialBodies
 		planetArctos.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetArctos.setPhaseShift(10.0F);
 		planetArctos.setRelativeOrbitTime(6.0F);
-		planetArctos.setDistanceFromCenter(2.1F);
+		planetArctos.setDistanceFromCenter(3.0F);
 		planetArctos.setTierRequired(-1);
 		planetArctos.setRelativeSize(8.0F);
 		planetArctos.setPlanetRadiation(0.5F);
@@ -142,7 +155,7 @@ public class CelestialBodies
 		moonPales.setDistanceFromCenter(14.5F);
 	    moonPales.setPlanetRadiation(0.5F);
 		moonPales.setWindLevel(6.7F);
-		moonPales.setHasRain(false);
+		moonPales.setHasRain(true);
 		
 		//Juno - WIP --------------------------------------
 		
@@ -161,9 +174,10 @@ public class CelestialBodies
 	
 	public static void registerSystems()
 	{
+		CelestialBodies.registerPlanets();
 		GalaxyRegistry.registerSolarSystem(systemPollux);
 		GalaxyRegistry.registerSolarSystem(systemTRAPPIST_1);
-		CelestialBodies.registerPlanets();
+		//GalaxyRegistry.registerSolarSystem(systemTest);
 	}
 	
 	public static void registerPlanets()
